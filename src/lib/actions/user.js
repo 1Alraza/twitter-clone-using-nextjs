@@ -22,9 +22,20 @@ export async function SignUp(prevState, formData) {
   if (!email.includes('@')) {
     return { error: 'Email should contain @' };
   }
+  const existingUser = await prisma.user.findUnique({
+    where: { email },
+  });
 
+  if (existingUser) {
+    return { error: 'Email Already is exist' };
+  }
   try {
-    const url = await uploadImage(image);
+
+let url = `https://ui-avatars.com/api/?name=${encodeURIComponent(username[0])}&background=random&color=fff`;
+
+if (image && typeof image.arrayBuffer === 'function' && image.size > 0) {
+  url = await uploadImage(image);
+}
 
     const user = await prisma.user.create({
       data: {
@@ -43,6 +54,7 @@ export async function SignUp(prevState, formData) {
 }
 
 export async function SignIn(prevstate, formData) {
+  console.log(formData, " i am formadata")
   const email = formData.get('email');
   const password = formData.get('password');
 

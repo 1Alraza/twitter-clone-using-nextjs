@@ -19,7 +19,8 @@ export default function Sidebar({user}) {
   }
 
   return (
-    <div className='flex flex-col p-3 justify-between h-screen items-center'>
+    <div className="fixed top-0 left-0 flex flex-col justify-between h-screen w-20 xl:w-64 p-3 border-r bg-white z-50">
+
       <div className='flex flex-col gap-4 p-3'>
         {/* Logo Icon */}
         <Link href='/'>

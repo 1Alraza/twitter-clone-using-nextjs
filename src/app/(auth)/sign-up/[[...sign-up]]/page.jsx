@@ -21,15 +21,17 @@ export default function Page() {
     }
   }, [formState, router]);
 
-  function handleAvatarChange(e) {
-    const file = e.target.files && e.target.files[0];
-    if (file) {
-      setAvatarPreview(URL.createObjectURL(file));
-    } else {
-      setAvatarPreview(null);
-    }
-  }
+function handleAvatarChange(e) {
+  const file = e.target.files?.[0];
 
+  if (file) {
+    console.log(URL.createObjectURL(file),'i am image')
+    setAvatarPreview(URL.createObjectURL(file));
+  } else {
+    setAvatarPreview(null);
+    e.target.value = null; 
+  }
+}
   return (
     <div className="mx-auto w-full max-w-md space-y-6">
       <div className="text-center">

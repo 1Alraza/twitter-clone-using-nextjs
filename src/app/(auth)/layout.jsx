@@ -1,6 +1,4 @@
 import '../globals.css';
-import { cookies } from 'next/headers';
-import { redirect } from 'next/navigation';
 
 export const metadata = {
   title: 'Next.js',
@@ -9,21 +7,16 @@ export const metadata = {
 
 // ✅ Make the layout async
 export default async function RootLayout({ children }) {
-  const cookieStore = await cookies();
-  const user = cookieStore.get("user_id");
-  console.log(cookieStore.get("user_id"))
-
-
-  if (user) redirect('/');
-
   return (
     <html lang='en'>
       <body>
         <div className="flex min-h-screen w-full">
-          {/* Left Panel */}
-          <div className="hidden lg:flex items-center justify-center bg-black w-1/2 px-12">
-            <div className="max-w-md space-y-6 text-center text-primary-foreground">
-              <h1 className="text-4xl font-extrabold tracking-tight text-white">
+          {/* Left Panel with image background */}
+          <div
+            className="hidden lg:flex items-center justify-center w-1/2 px-12 bg-cover bg-center  bg-black bg-opacity-50 p-6"
+          >
+            <div className="max-w-md space-y-6 text-center text-white bg-black bg-opacity-50 p-6 rounded-lg">
+              <h1 className="text-4xl font-extrabold tracking-tight">
                 Welcome to X
               </h1>
             </div>
