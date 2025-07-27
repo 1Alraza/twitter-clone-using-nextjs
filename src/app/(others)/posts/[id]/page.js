@@ -3,7 +3,7 @@ import { getPostsById } from '@/lib/actions/post';
 import { getCommentsByPostId } from '@/lib/actions/comment';
 import { cookies } from 'next/headers';
 import Link from 'next/link';
-import Icons from '@/components/icons';
+import Icons from '@/components/Icons';
 import moment from 'moment';
 
 export default async function PostPage({ params }) {

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { HiDotsHorizontal } from 'react-icons/hi';
 import moment from 'moment';
-import Icons from './icons';import { cookies } from 'next/headers';
+import Icons from './Icons';import { cookies } from 'next/headers';
 ;
 
 export default async function Post({ post }) {

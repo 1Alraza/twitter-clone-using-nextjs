@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
-import LeftSideBar from "@/components/leftSideBar";
-import RightSideBar from "@/components/rightSideBar";
+import LeftSideBar from "@/components/LeftSideBar";
+import RightSideBar from "@/components/RightSideBar";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 

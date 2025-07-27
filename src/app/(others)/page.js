@@ -1,5 +1,6 @@
-import Feed from "@/components/feed";
-import Input from "@/components/input";
+import Feed from "@/components/Feed";
+import Input from "@/components/Input";
+// import Input from "@/components/Input";
 import { getallPosts } from "@/lib/actions/post";
 
 const data=getallPosts()

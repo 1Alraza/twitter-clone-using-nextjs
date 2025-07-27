@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { FaXTwitter } from 'react-icons/fa6';
 import { HiHome } from 'react-icons/hi';
-import MiniProfile from './miniProfile';
+import MiniProfile from './MiniProfile';
 
 export default function Sidebar({user}) {
     const router = useRouter();
